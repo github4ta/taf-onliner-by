@@ -4,19 +4,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginForm {
-    public static void main(String[] args) {
-        WebDriver driver = new ChromeDriver();
         // Локатор заголовка формы текст Вход
-        WebElement headOfEntryTextForm = driver.findElement(By.xpath("//*[@id=\"auth-container\"]/div/div[2]/div/div[1]"));
+        By headOfEntryTextForm = (By.xpath("//*[@class = 'auth-form__title auth-form__title_big auth-form__title_condensed-default']"));
         // Локатор поле ввода Ник или e-mail
-        WebElement fildNicknameOrEmail = driver.findElement(By.xpath
-                ("//*[@id=\"auth-container\"]/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input"));
+        By fildNicknameOrEmail = (By.xpath("//input[@placeholder = 'Ник или e-mail']"));
         // Локатор поле ввода Пароль
-        WebElement fildPassword = driver.findElement(By.xpath
-                ("//input[@type =\"password\"]"));
+        By fildPassword = (By.xpath("//input[@type = 'password']"));
         // Локатор кнопки Войти
-        WebElement buttonEntry  = driver.findElement(By.xpath
-                ("//button[@class=\"auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full\"]"));
+        By buttonEntry  = (By.xpath
+                ("//button[@class = 'auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']"));
 
-    }
 }
