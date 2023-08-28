@@ -1,4 +1,3 @@
 Tsarik Sergei
 
 Mirko Artem
-
