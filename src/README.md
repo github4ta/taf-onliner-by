@@ -5,3 +5,4 @@ Kutko Victoria
 Mirko Artem
 Holik Uladzimir
 Ryzhenkj Irina
+Karizno Mihail
