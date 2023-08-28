@@ -1,4 +1,5 @@
 Tsarik Sergei
 Kutko Victoria
-Alexey Karatay
 Bernat Volha
+Karizno Mihail
+Mirko Artem
