@@ -1,14 +1,12 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginForm {
+    WebDriver driver;
     private By nickNameInput = By.xpath("//*[@id='auth-container']/div/div[2]/div/form/div[1]/div/div[2]/div/div/div/div/input");
     private By passwordInput = By.xpath("//*[@id='auth-container']/div/div[2]/div/form/div[2]/div/div/div/div/input");
     private By loginButton = By.xpath("//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']");
     private By loginFormHeader = By.xpath("//div[@class='auth-form__title auth-form__title_big auth-form__title_condensed-default']");
-    WebDriver driver;
 
     LoginForm(WebDriver driver) {
         this.driver = driver;
