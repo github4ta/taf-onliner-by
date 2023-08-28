@@ -1,5 +1,1 @@
 Tsarik Sergei
-Kutko Victoria
-Bernat Volha
-Karizno Mihail
-Mirko Artem
