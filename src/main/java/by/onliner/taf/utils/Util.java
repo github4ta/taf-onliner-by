@@ -26,6 +26,7 @@ public class Util {
     /**
      * Метод generateNickname возвращает произвольную кобинацию букв латинского алфавита
      * (большие и малые) и цифр, например, asD23fD3s. Общее количество знаков всегда постоянное и равно 10.
+     *  @return Cгенерированный Nickname
      */
 
     public static String generateNickname() {
