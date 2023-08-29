@@ -1,4 +1,7 @@
+import by.onliner.taf.utils.Util;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +14,16 @@ public class LoginFormTest extends BaseTest {
     WebElement loginButton;
     WebElement fildNicknameOrEmail;
     WebElement buttonEntry;
+
+    @Disabled
+    @DisplayName("Login with any Email and empty Password")
+    @Test
+    public void testLoginWithAnyEmailAndEmptyPassword() {
+        LoginForm form = new LoginForm(driver);
+        form.fillingNicknameInputWith(Util.generateNickname(10));
+        form.clickLoginButton();
+        Assertions.assertEquals("Укажите пароль", "Здесь могда быть ваша реклама");
+    }
     @Test
     public void testEnterCorrectEmailAndEmptyPassword() {
         WebDriver driver = new ChromeDriver();
