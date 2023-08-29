@@ -13,7 +13,7 @@ public class Util {
 
         for (int i = 0; i < numberOfCharacters; i++) {
             do {
-                ch = (char) (Math.random() * 62 + 60);
+                ch = (char) (Math.random() * 74 + 48);
             } while ((57 < ch && ch < 65) || (90 < ch && ch < 97));
             name = name + ch;
         }
