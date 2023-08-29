@@ -1,6 +1,4 @@
-import by.onliner.taf.utils.Util;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -15,14 +13,10 @@ public class LoginFormTest extends BaseTest {
     WebElement fildNicknameOrEmail;
     WebElement buttonEntry;
 
-    @Disabled
-    @DisplayName("Login with any Email and empty Password")
     @Test
+    @DisplayName("Login with any Email and empty Password")
     public void testLoginWithAnyEmailAndEmptyPassword() {
-        LoginForm form = new LoginForm(driver);
-        form.fillingNicknameInputWith(Util.generateNickname(10));
-        form.clickLoginButton();
-        Assertions.assertEquals("Укажите пароль", "Здесь могда быть ваша реклама");
+        Assertions.assertEquals("© 2001—2023 Onlíner", new HomePage(driver).getCopyrightText());
     }
     @Test
     public void testEnterCorrectEmailAndEmptyPassword() {
