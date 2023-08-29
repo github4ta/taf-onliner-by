@@ -12,6 +12,12 @@ public class LoginFormTest extends BaseTest {
     WebElement loginButton;
     WebElement fildNicknameOrEmail;
     WebElement buttonEntry;
+
+    @Test
+    @DisplayName("Login with any Email and empty Password")
+    public void testLoginWithAnyEmailAndEmptyPassword() {
+        Assertions.assertEquals("© 2001—2023 Onlíner", new HomePage(driver).getCopyrightText());
+    }
     @Test
     public void testEnterCorrectEmailAndEmptyPassword() {
         WebDriver driver = new ChromeDriver();
