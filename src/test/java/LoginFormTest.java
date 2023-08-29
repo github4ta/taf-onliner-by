@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class LoginFormTest {
+public class LoginFormTest extends BaseTest {
     WebElement loginButton;
     WebElement fildNicknameOrEmail;
     WebElement buttonEntry;
