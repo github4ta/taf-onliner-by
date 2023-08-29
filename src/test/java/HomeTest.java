@@ -1,3 +1,3 @@
-public class HomeTest {
+public class HomeTest extends BaseTest {
 }
 
