@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,5 +33,13 @@ public class LoginFormTest extends BaseTest {
         Assertions.assertEquals(expexted, actual);
         driver.quit();
     }
-
+    @DisplayName("Opening Home Page")
+    @Test
+    public void testLoginWithEmptyNickAndAnyPassword() {
+        HomePage testedHomePage = new HomePage(driver);
+        String actualTestResult = testedHomePage.getCopyrightText();
+        String expextation = "© 2001—2023 Onlíner";
+        Assertions.assertEquals(expextation, actualTestResult);
+    }
 }
+
