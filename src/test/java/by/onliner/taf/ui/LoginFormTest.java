@@ -21,4 +21,15 @@ public class LoginFormTest extends BaseTest {
         String actualResult = loginForm.getErrorMessageText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    @DisplayName("UI0003 - LoginForm: any correct login and empty password")
+    public void testLoginWithAnyEmailAndEmptyPassword(){
+        HomePage homePage = new HomePage(driver);
+        homePage.clickLoginButton();
+        LoginForm loginForm = new LoginForm(driver);
+        loginForm.typeNickNameInput(Util.generateNickname(10));
+        loginForm.clickLoginButton();
+        Assertions.assertEquals("Укажите пароль", loginForm.getErrorMessageText());
+    }
 }
