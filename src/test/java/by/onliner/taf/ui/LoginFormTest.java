@@ -20,7 +20,7 @@ public class LoginFormTest extends BaseTest {
         loginForm.fillingPasswordInputWith("123ABCabc");
         loginForm.clickLoginButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String actualErrorMessage = loginForm.getErrorMessageEmptyNickAndAnyPassword();
+        String actualErrorMessage = loginForm.getErrorMessageAnywayPasswordAndNick();
         String expectedErrorMessage = "Укажите ник или e-mail";
         Assertions.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
