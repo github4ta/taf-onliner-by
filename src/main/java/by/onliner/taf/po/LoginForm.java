@@ -10,7 +10,7 @@ public class LoginForm {
     private By loginButton = By.xpath("//button[@class='auth-button auth-button_primary auth-button_middle auth-form__button auth-form__button_width_full']");
     private By loginFormHeader = By.xpath("//div[@class='auth-form__title auth-form__title_big auth-form__title_condensed-default']");
 
-    LoginForm(WebDriver driver) {
+    public LoginForm(WebDriver driver) {
         this.driver = driver;
     }
 
