@@ -5,7 +5,6 @@ import by.onliner.taf.po.LoginForm;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.concurrent.TimeUnit;
 
 public class LoginFormTest extends BaseTest {
@@ -16,11 +15,11 @@ public class LoginFormTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginForm loginForm = new LoginForm(driver);
-        loginForm.fillingNicknameInputWith("");
-        loginForm.fillingPasswordInputWith("123ABCabc");
+        loginForm.typeNickNameInput("");
+        loginForm.typePasswordInput("123ABCabc");
         loginForm.clickLoginButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String actualErrorMessage = loginForm.getErrorMessageAnywayPasswordAndNick();
+        String actualErrorMessage = loginForm.getErrorMessageText();
         String expectedErrorMessage = "Укажите ник или e-mail";
         Assertions.assertEquals(expectedErrorMessage, actualErrorMessage);
     }
