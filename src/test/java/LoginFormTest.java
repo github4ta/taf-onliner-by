@@ -41,11 +41,20 @@ public class LoginFormTest extends BaseTest {
     }
     @DisplayName("Opening Home Page")
     @Test
-    public void testLoginWithEmptyNickAndAnyPassword() {
+    public void testLoginWithAnyNickAndAnyPassword( ) {
         HomePage testedHomePage = new HomePage(driver);
         String actualTestResult = testedHomePage.getCopyrightText();
         String expextation = "© 2001—2023 Onlíner";
         Assertions.assertEquals(expextation, actualTestResult);
+    }
+
+    @DisplayName("Login with empty Email and any Password")
+    @Test
+    public void testLoginWithEmptyNickAndAnyPassword() {
+        HomePage homePage = new HomePage(driver);
+        String actual = homePage.getCopyrightText();
+        String expected = "© 2001—2023 Onlíner";
+        Assertions.assertEquals(expected, actual);
     }
     @Test
     @DisplayName("Login with empty Email and empty Password")
