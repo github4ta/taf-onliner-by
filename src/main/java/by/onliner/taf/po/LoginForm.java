@@ -2,6 +2,10 @@ package by.onliner.taf.po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginForm {
     WebDriver driver;
@@ -33,5 +37,14 @@ public class LoginForm {
 
     public String getErrorMessageText(){
        return driver.findElement(errorMessage).getText();
+    }
+
+    public List<String> getErrorMessages() {
+        List<WebElement> webElements = driver.findElements(errorMessage);
+        List<String> errorMessages = new ArrayList<>();
+        for(WebElement element: webElements) {
+            errorMessages.add(element.getText());
+        }
+        return errorMessages;
     }
 }

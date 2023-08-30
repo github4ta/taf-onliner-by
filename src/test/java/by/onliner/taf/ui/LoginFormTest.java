@@ -6,6 +6,8 @@ import by.onliner.taf.utils.Util;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class LoginFormTest extends BaseTest {
@@ -47,5 +49,22 @@ public class LoginFormTest extends BaseTest {
         String actualErrorMessage = loginForm.getErrorMessageText();
         String expectedErrorMessage = "Укажите ник или e-mail";
         Assertions.assertEquals(expectedErrorMessage, actualErrorMessage);
+    }
+
+    @DisplayName("UI0002- Форма логина : пустой ник и пустой пароль")
+    @Test
+    public void testLoginWithEmptyNickAndEmptyPassword() {
+        HomePage homePage = new HomePage(driver);
+        homePage.clickLoginButton();
+        LoginForm loginForm = new LoginForm(driver);
+        loginForm.typeNickNameInput("");
+        loginForm.typePasswordInput("");
+        loginForm.clickLoginButton();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        List<String> actualErrorMessages = loginForm.getErrorMessages();
+        String expectedErrorMessage1 = "Укажите ник или e-mail";
+        String expectedErrorMessage2 = "Укажите пароль";
+        Assertions.assertEquals(expectedErrorMessage1, actualErrorMessages.get(0));
+        Assertions.assertEquals(expectedErrorMessage2, actualErrorMessages.get(1));
     }
 }
