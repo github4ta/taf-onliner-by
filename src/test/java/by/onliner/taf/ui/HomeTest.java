@@ -1,3 +1,6 @@
+package by.onliner.taf.ui;
+
+import by.onliner.taf.po.HomePage;
 import org.junit.jupiter.api.*;
 
 public class HomeTest extends BaseTest {
