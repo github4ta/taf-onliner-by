@@ -13,7 +13,7 @@ public class LoginForm {
     private By loginFormHeader = By.xpath("//div[@class='auth-form__title auth-form__title_big auth-form__title_condensed-default']");
     private By errorMessage = By.xpath("//div[@class='auth-form__description auth-form__description_error auth-form__description_base auth-form__description_extended-other']");
 
-    LoginForm(WebDriver driver) {
+    public LoginForm(WebDriver driver) {
         this.driver = driver;
     }
 
