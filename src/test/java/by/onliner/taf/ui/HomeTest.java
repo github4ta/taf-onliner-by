@@ -8,9 +8,8 @@ public class HomeTest extends BaseTest {
     @Test
     public void testHomePageOpened() {
         HomePage homePage = new HomePage(driver);
-        String actualCopywriterText = homePage.getCopyrightText();
+        String actualCopywriterText = homePage.getCopyright();
         String extendsCopywriterText = "© 2001—2023 Onlíner";
         Assertions.assertEquals(extendsCopywriterText, actualCopywriterText);
     }
 }
-

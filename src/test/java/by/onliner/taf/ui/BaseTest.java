@@ -13,6 +13,7 @@ public class BaseTest {
         driver.manage().window().maximize();
         driver.get("https://www.onliner.by/");
     }
+
     @AfterEach
     public void driverShutDown() {
         driver.quit();

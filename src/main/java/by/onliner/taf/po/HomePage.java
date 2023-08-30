@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class HomePage {
     private WebDriver driver;
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
-    private String copyrightText = "//div[@class='footer-style__copy']";
+    private String copyright = "//div[@class='footer-style__copy']";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -18,8 +18,8 @@ public class HomePage {
         loginButtonElement.click();
     }
 
-    public String getCopyrightText() {
-        WebElement copyrightTextElement = driver.findElement(By.xpath(copyrightText));
+    public String getCopyright() {
+        WebElement copyrightTextElement = driver.findElement(By.xpath(copyright));
         return copyrightTextElement.getText();
     }
 }
