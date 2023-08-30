@@ -14,11 +14,11 @@ public class LoginFormTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
         LoginForm loginForm = new LoginForm(driver);
-        loginForm.fillingNicknameInputWith(Util.generateNickname());
-        loginForm.fillingPasswordInputWith("123456qwerty");
+        loginForm.typeNickNameInput(Util.generateNickname());
+        loginForm.typePasswordInput("123456qwerty");
         loginForm.clickLoginButton();
         String expectedResult = "Неверный логин или пароль";
-        String actualResult = loginForm.getTextErrorMessage();
+        String actualResult = loginForm.getErrorMessageText();
         Assertions.assertEquals(expectedResult, actualResult);
     }
 }
