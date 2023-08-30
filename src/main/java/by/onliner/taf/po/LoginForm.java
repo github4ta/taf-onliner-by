@@ -2,8 +2,6 @@ package by.onliner.taf.po;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginForm {
     WebDriver driver;
@@ -17,11 +15,11 @@ public class LoginForm {
         this.driver = driver;
     }
 
-    public void fillingNicknameInputWith(String nickname) {
+    public void typeNickNameInput(String nickname) {
         driver.findElement(nickNameInput).sendKeys(nickname);
     }
 
-    public void fillingPasswordInputWith(String password) {
+    public void typePasswordInput(String password) {
         driver.findElement(passwordInput).sendKeys(password);
     }
 
@@ -29,11 +27,11 @@ public class LoginForm {
         driver.findElement(loginButton).click();
     }
 
-    public String getTextFromHeaderOnLoginForm() {
+    public String getLoginFormHeaderText() {
         return driver.findElement(loginFormHeader).getText();
     }
 
-    public String getErrorMessageAnywayPasswordAndNick(){
+    public String getErrorMessageText(){
        return driver.findElement(errorMessage).getText();
     }
 }
