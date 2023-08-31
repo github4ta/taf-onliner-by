@@ -3,6 +3,10 @@ package by.onliner.taf.po;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
@@ -22,5 +26,11 @@ public class HomePage {
     public String getCopyright() {
         WebElement copyrightTextElement = driver.findElement(By.xpath(copyright));
         return copyrightTextElement.getText();
+    }
+
+    public void clickCarMarketHref() {
+        WebElement carMarket = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(carMarketHref)));
+        carMarket.click();
     }
 }
