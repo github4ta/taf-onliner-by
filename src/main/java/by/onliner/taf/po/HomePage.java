@@ -12,7 +12,7 @@ public class HomePage {
     private WebDriver driver;
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
     private String copyright = "//div[@class='footer-style__copy']";
-    private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']0";
+    private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
