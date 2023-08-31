@@ -24,7 +24,7 @@ public class HomePage {
     }
 
     public void  clickBaraholkaLink() {
-        //Инициадизация вебэлемента с ожиданием проверки присутствия элемента на странице
+        //Инициализация вебэлемента с ожиданием проверки присутствия элемента на странице
         //https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/ui/ExpectedConditions.html#presenceOfElementLocated(org.openqa.selenium.By)
         WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
