@@ -1,4 +1,19 @@
 package by.onliner.taf.ui;
 
-public class ABTest extends BaseTest{
+import by.onliner.taf.po.ABPage;
+import by.onliner.taf.po.HomePage;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
+
+public class ABTest extends BaseTest {
+
+    @DisplayName("UI0021 - проверка открытия страницы Автобарахолка")
+    @Test
+    public void testABOpened() {
+        HomePage homePage = new HomePage(driver);
+        ABPage abPage = new ABPage(driver);
+        homePage.clickCarMarketHref();
+        Assertions.assertEquals("Автобарахолка", abPage.getCarMarketHeader());
+    }
 }
