@@ -54,17 +54,22 @@ public class LoginFormTest extends BaseTest {
     @DisplayName("UI0002- Форма логина : пустой ник и пустой пароль")
     @Test
     public void testLoginWithEmptyNickAndEmptyPassword() {
+        // Arrange
         HomePage homePage = new HomePage(driver);
         homePage.clickLoginButton();
+
+        // Act
         LoginForm loginForm = new LoginForm(driver);
         loginForm.typeNickNameInput("");
         loginForm.typePasswordInput("");
         loginForm.clickLoginButton();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        List<String> actualErrorMessages = loginForm.getErrorMessages();
-        String expectedErrorMessage1 = "Укажите ник или e-mail";
-        String expectedErrorMessage2 = "Укажите пароль";
-        Assertions.assertEquals(expectedErrorMessage1, actualErrorMessages.get(0));
-        Assertions.assertEquals(expectedErrorMessage2, actualErrorMessages.get(1));
+
+        // LoginFormStep logFormStep = new LoginFormStep(driver);
+        // logFormStep.fillLoginFormAndClickSubmit("", "");
+
+        // Assertion
+        Assertions.assertEquals("Укажите ник или e-mail", loginForm.getErrorMessageNickname());
+        Assertions.assertEquals("Укажите пароль", loginForm.getErrorMessagePassword());
     }
 }

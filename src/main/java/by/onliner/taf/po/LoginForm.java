@@ -39,12 +39,20 @@ public class LoginForm {
        return driver.findElement(errorMessage).getText();
     }
 
-    public List<String> getErrorMessages() {
+    private List<String> getErrorMessages() {
         List<WebElement> webElements = driver.findElements(errorMessage);
         List<String> errorMessages = new ArrayList<>();
         for(WebElement element: webElements) {
             errorMessages.add(element.getText());
         }
         return errorMessages;
+    }
+
+    public String getErrorMessageNickname() {
+        return getErrorMessages().get(0);
+    }
+
+    public String getErrorMessagePassword() {
+        return getErrorMessages().get(1);
     }
 }
