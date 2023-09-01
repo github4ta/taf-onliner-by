@@ -29,9 +29,9 @@ public class HomePage {
     }
 
     public void clickABLink() {
-        WebElement carMarket = new WebDriverWait(driver, Duration.ofSeconds(10))
+        WebElement carMarketElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ABLink)));
-        carMarket.click();
+        carMarketElement.click();
     }
 }
 
