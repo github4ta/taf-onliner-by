@@ -50,17 +50,17 @@ public class Util {
      */
     public static String generatePassword() {
         Random random = new SecureRandom();
-        final String LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        final String DIGITS = "0123456789";
-        String SPECIAL_CHARACTERS = "!@#$%&*";
-        final String ALL_CHARACTERS = LETTERS + DIGITS + SPECIAL_CHARACTERS;
+        final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        final String digits = "0123456789";
+        String specialCharacters = "!@#$%&*";
+        final String allCharacters = letters + digits + specialCharacters;
 
         int length = random.nextInt(9) + 8;
         StringBuilder password = new StringBuilder(length);
 
         for (int i = 0; i < length; i++) {
-            int randomIndex = random.nextInt(ALL_CHARACTERS.length());
-            char randomCharacter = ALL_CHARACTERS.charAt(randomIndex);
+            int randomIndex = random.nextInt(allCharacters.length());
+            char randomCharacter = allCharacters.charAt(randomIndex);
             password.append(randomCharacter);
         }
         return password.toString();
