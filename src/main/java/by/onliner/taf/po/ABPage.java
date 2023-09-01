@@ -8,15 +8,15 @@ import java.time.Duration;
 
 public class ABPage {
     private WebDriver driver;
-    private String ABHeader = "//h1[@class='vehicle-form__title vehicle-form__title_big-alter']";
+    private String abHeader = "//h1[@class='vehicle-form__title vehicle-form__title_big-alter']";
 
     public ABPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public String getABHeader() {
+    public String getAbHeader() {
         return new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ABHeader)))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(abHeader)))
                 .getText();
     }
 }

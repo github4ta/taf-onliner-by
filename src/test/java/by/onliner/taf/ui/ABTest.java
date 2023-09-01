@@ -14,6 +14,6 @@ public class ABTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         ABPage abPage = new ABPage(driver);
         homePage.clickABLink();
-        Assertions.assertEquals("Автобарахолка", abPage.getABHeader());
+        Assertions.assertEquals("Автобарахолка", abPage.getAbHeader());
     }
 }
