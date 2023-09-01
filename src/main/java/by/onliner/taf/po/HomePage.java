@@ -27,6 +27,7 @@ public class HomePage {
         WebElement copyrightTextElement = driver.findElement(By.xpath(copyright));
         return copyrightTextElement.getText();
     }
+
     public void clickCatalogLink(){
         WebElement catalogLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogLink)));
