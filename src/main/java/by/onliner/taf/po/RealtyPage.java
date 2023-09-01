@@ -11,14 +11,16 @@ public class RealtyPage {
     private String saleLink = "//a[@href='https://r.onliner.by/pk'][text()='Продажа']";
     private String rentLink = "//a[@href='https://r.onliner.by/ak'][text()='Аренда']";
 
-    public RealtyPage(WebDriver driver){
+    public RealtyPage(WebDriver driver) {
         this.driver = driver;
     }
-    public String getTextSaleLink(){
+
+    public String getTextSaleLink() {
         WebElement textSaleLinkElement = driver.findElement(By.xpath(saleLink));
         return textSaleLinkElement.getText();
     }
-    public String getTextRentLink(){
+
+    public String getTextRentLink() {
         WebElement textRentLink = driver.findElement(By.xpath(rentLink));
         return textRentLink.getText();
     }
