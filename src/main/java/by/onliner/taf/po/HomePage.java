@@ -12,7 +12,7 @@ public class HomePage {
     private WebDriver driver;
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
     private String copyright = "//div[@class='footer-style__copy']";
-    private String carMarketLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
+    private String ABLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -28,9 +28,10 @@ public class HomePage {
         return copyrightTextElement.getText();
     }
 
-    public void clickCarMarketHref() {
+    public void clickABLink() {
         WebElement carMarket = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(carMarketLink)));
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(ABLink)));
         carMarket.click();
     }
 }
+
