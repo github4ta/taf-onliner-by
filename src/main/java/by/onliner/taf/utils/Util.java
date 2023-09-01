@@ -52,7 +52,7 @@ public class Util {
         Random random = new SecureRandom();
         final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         final String digits = "0123456789";
-        String specialCharacters = "!@#$%&*";
+        final String specialCharacters = "!@#$%&*";
         final String allCharacters = letters + digits + specialCharacters;
 
         int length = random.nextInt(9) + 8;
