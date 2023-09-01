@@ -13,6 +13,7 @@ public class HomePage {
     private String copyright = "//div[@class='footer-style__copy']";
     private String abLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
     private String catalogLink = "//a[@href='https://catalog.onliner.by'][@class='b-main-navigation__link']";
+    private String realtyLink = "//a[@href='https://r.onliner.by/pk'][@class='b-main-navigation__link']";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -38,5 +39,9 @@ public class HomePage {
         WebElement catalogLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogLink)));
         catalogLinkElement.click();
+    }
+    public void clickRealtyLink(){
+        WebElement realtyLinkElement = driver.findElement(By.xpath(realtyLink));
+        realtyLinkElement.click();
     }
 }
