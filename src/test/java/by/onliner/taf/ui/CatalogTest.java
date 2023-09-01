@@ -14,7 +14,7 @@ public class CatalogTest extends BaseTest{
         HomePage homePage = new HomePage(driver);
         CatalogPage catalogPage = new CatalogPage(driver);
         homePage.clickCatalogLink();
-        String actualCatalogTitleText = catalogPage.getCatalogTitle();
+        String actualCatalogTitleText = catalogPage.getCatalogHeader();
         String excpectedCatalogTitleText = "КаталогВсе суперцены!";
         Assertions.assertEquals(excpectedCatalogTitleText, actualCatalogTitleText);
     }

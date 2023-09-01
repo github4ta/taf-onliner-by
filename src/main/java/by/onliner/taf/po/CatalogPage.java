@@ -13,7 +13,7 @@ public class CatalogPage {
     public CatalogPage(WebDriver driver){
         this.driver = driver;
     }
-    public String getCatalogTitle() {
+    public String getCatalogHeader() {
         return new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogHeader)))
                 .getText();
