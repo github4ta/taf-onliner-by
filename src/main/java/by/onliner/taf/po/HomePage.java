@@ -15,7 +15,6 @@ public class HomePage {
     private String abLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
     private String catalogLink = "//a[@href='https://catalog.onliner.by'][@class='b-main-navigation__link']";
     private String realtyLink = "//a[@href='https://r.onliner.by/pk'][@class='b-main-navigation__link']";
-    private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']0";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
