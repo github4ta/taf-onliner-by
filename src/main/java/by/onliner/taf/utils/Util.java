@@ -1,5 +1,6 @@
 package by.onliner.taf.utils;
 
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class Util {
@@ -40,5 +41,28 @@ public class Util {
             nickname[i] = characters.charAt(index);
         }
         return new String(nickname);
+    }
+    /**
+     * Метод generatePassword возвращает произвольную комбинацию букв латинского алфавита (маленькие \ большие буквы), цифры 0 - 9, спецсимволы !@#$%&*.
+     * Например, dkHd!d-#jfd
+     * Общее количество знаков пароля может быть случайным от 8 до 16 включительно..
+     *  @return Cгенерированный Password
+     */
+    public static String generatePassword() {
+        Random random = new SecureRandom();
+        final String letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        final String digits = "0123456789";
+        final String specialCharacters = "!@#$%&*";
+        final String allCharacters = letters + digits + specialCharacters;
+
+        int length = random.nextInt(9) + 8;
+        StringBuilder password = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++) {
+            int randomIndex = random.nextInt(allCharacters.length());
+            char randomCharacter = allCharacters.charAt(randomIndex);
+            password.append(randomCharacter);
+        }
+        return password.toString();
     }
 }
