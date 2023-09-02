@@ -5,20 +5,9 @@ import by.onliner.taf.po.HomePage;
 import org.junit.jupiter.api.*;
 
 public class BaraholkaTest extends BaseTest {
-    @BeforeEach
-    void beforEachBaraholkaTest() {
-        HomePage homePage = new HomePage(driver);
-        homePage.clickBaraholkaLink();
-    }
-
     @Test
-    @DisplayName("Проверка текста заголовка страницы Барахолка")
-    void testaraholkaOpened() {
+    @DisplayName("UI0024 - проверка текста заголовка страницы Барахолка")
+    void testBaraholkaOpened() {
         Assertions.assertEquals("Барахолка", new BaraholkaPage(driver).getFormHeaderText());
-    }
-
-    @AfterEach
-    void afterEachBaraholkaTest() {
-        driver.quit();
     }
 }
