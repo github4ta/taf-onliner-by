@@ -12,6 +12,7 @@ public class HomePage {
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
     private String copyright = "//div[@class='footer-style__copy']";
     private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']";
+    private String servicesLink = "//a[@href='https://s.onliner.by/tasks'][@class='b-main-navigation__link']";
     private String abLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
     private String catalogLink = "//a[@href='https://catalog.onliner.by'][@class='b-main-navigation__link']";
     private String realtyLink = "//a[@href='https://r.onliner.by/pk'][@class='b-main-navigation__link']";
@@ -29,6 +30,12 @@ public class HomePage {
         WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
         baraholkaLinkElement.click();
+    }
+
+    public void  clickServiceLink() {
+        WebElement servicesLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(servicesLink)));
+        servicesLinkElement.click();
     }
 
     public String getCopyright() {
