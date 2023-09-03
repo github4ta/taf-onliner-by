@@ -11,10 +11,10 @@ public class HomePage {
     private WebDriver driver;
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
     private String copyright = "//div[@class='footer-style__copy']";
+    private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']";
     private String abLink = "//a[@href='https://ab.onliner.by'][@class='b-main-navigation__link']";
     private String catalogLink = "//a[@href='https://catalog.onliner.by'][@class='b-main-navigation__link']";
     private String realtyLink = "//a[@href='https://r.onliner.by/pk'][@class='b-main-navigation__link']";
-    private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']0";
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
@@ -26,8 +26,6 @@ public class HomePage {
     }
 
     public void  clickBaraholkaLink() {
-        //Инициадизация вебэлемента с ожиданием проверки присутствия элемента на странице
-        //https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/support/ui/ExpectedConditions.html#presenceOfElementLocated(org.openqa.selenium.By)
         WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
         baraholkaLinkElement.click();
