@@ -20,5 +20,15 @@ public class RealtyTest extends BaseTest {
         Assertions.assertEquals(expectedTextSale, actualTextSale);
         Assertions.assertEquals(expectedTextRent, actualTextRent);
     }
+
+    @DisplayName("UI0029 - проверка работы поля Поиск")
+    @Test
+    public void testRealtySearched() {
+        HomePage homePage = new HomePage(driver);
+        homePage.clickRealtyLink();
+        RealtyPage realtyPage = new RealtyPage(driver);
+        realtyPage.clickRentButton();
+        realtyPage.getSearchResult();
+    }
 }
 
