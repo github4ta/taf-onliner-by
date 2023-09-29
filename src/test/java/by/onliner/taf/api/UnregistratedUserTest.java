@@ -17,7 +17,7 @@ public class UnregistratedUserTest {
         given().body(requestBody).header("Content-Type", "application/json")
                 .when().post("https://www.onliner.by/sdapi/user.api/login")
                 .then().statusCode(400)
-                .assertThat().body("errors.key[0]", equalTo("invalid_login_or_password"))
+                .assertThat().body("errors[0].key", equalTo("invalid_login_or_password"))
                 .body("errors[0].message", equalTo("Неверный логин или пароль"));
     }
 }
