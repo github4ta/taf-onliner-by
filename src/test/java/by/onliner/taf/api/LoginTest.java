@@ -52,7 +52,7 @@ public class LoginTest {
 
     @DisplayName("Check login with empty user name")
     @Test
-    public void testWithEmptyUserName() {
+    public void testWithEmptyLoginAndAnyPassword() {
         String body = "{\n" +
                 "    \"login\": \"\",\n" +
                 "    \"password\": \"1q2w3e4r5t\"\n" +
