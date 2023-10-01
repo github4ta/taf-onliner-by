@@ -42,9 +42,10 @@ public class LoginTest {
                 "   \"login\": \"\",\n" +
                 "   \"password\": \"\"\n" +
                 "}";
-        given().header("Content-Type", "application/json").body(body)
-                .when().post("https://www.onliner.by/sdapi/user.api/login")
+        given().header("Content-Type", "application/json").body(body).
+                when().post("https://www.onliner.by/sdapi/user.api/login")
                 .then().assertThat().statusCode(422)
+                .body("message", equalTo("Validation failed"))
                 .body("errors.login[0]", equalTo("Укажите ник или e-mail"))
                 .body("errors.password[0]", equalTo("Укажите пароль"));
     }
