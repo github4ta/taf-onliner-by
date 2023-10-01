@@ -34,4 +34,18 @@ public class LoginTest {
                 body("message", equalTo("Validation failed")).
                 body("errors.password[0]", equalTo("Укажите пароль"));
     }
+
+    @DisplayName("Check login with empty data")
+    @Test
+    public void testPostEmptyLoginAndPassword() {
+        String body = "{\n" +
+                "   \"login\": \"\",\n" +
+                "   \"password\": \"\"\n" +
+                "}";
+        given().header("Content-Type", "application/json").body(body)
+                .when().post("https://www.onliner.by/sdapi/user.api/login")
+                .then().assertThat().statusCode(422)
+                .body("errors.login[0]", equalTo("Укажите ник или e-mail"))
+                .body("errors.password[0]", equalTo("Укажите пароль"));
+    }
 }
