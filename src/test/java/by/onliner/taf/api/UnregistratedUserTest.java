@@ -20,4 +20,18 @@ public class UnregistratedUserTest {
                 .assertThat().body("errors[0].key", equalTo("invalid_login_or_password"))
                 .body("errors[0].message", equalTo("Неверный логин или пароль"));
     }
+
+    @DisplayName("Check login with empty password")
+    @Test
+    public void loginWithAnyLoginEmptyPassword() {
+        String body = "{\n" +
+                "   \"login\": \"test@test.com\",\n" +
+                "   \"password\": \"\"\n" +
+                "}";
+        given().header("Content-Type", "application/json").body(body).
+                when().post("https://www.onliner.by/sdapi/user.api/login").
+                then().statusCode(422).
+                body("message", equalTo("Validation failed")).
+                body("errors.password[0]", equalTo("Укажите пароль"));
+    }
 }
