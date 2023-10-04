@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class AlertPage {
     private WebDriver driver;
@@ -13,12 +16,12 @@ public class AlertPage {
     private String cookiesWindow = "//*[@id ='accept-choices']";
     private Wait<WebDriver> wait;
 
-    public AlertPage(WebDriver driver) {
-        this.driver = driver;
+    public AlertPage() {
+        driver = Singletone.getWebDriver();
     }
 
-    public AlertPage(WebDriver driver, Wait wait) {
-        this.driver = driver;
+    public AlertPage(Wait wait) {
+        driver = Singletone.getWebDriver();
         this.wait = wait;
     }
 
@@ -43,6 +46,10 @@ public class AlertPage {
         driver.switchTo().frame(iframe);
     }
     public String getAlertText() {
+
+        if (wait == null) {
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        }
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String alertText = alert.getText();
         alert.accept();
