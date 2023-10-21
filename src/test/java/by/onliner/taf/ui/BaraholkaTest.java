@@ -8,6 +8,6 @@ public class BaraholkaTest extends BaseTest {
     @Test
     @DisplayName("UI0024 - проверка текста заголовка страницы Барахолка")
     void testBaraholkaOpened() {
-        Assertions.assertEquals("Барахолка", new BaraholkaPage(driver).getFormHeaderText());
+        Assertions.assertEquals("Барахолка", new BaraholkaPage().getFormHeaderText());
     }
 }

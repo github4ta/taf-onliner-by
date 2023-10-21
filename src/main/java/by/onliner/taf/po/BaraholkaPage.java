@@ -1,5 +1,6 @@
 package by.onliner.taf.po;
 
+import by.onliner.taf.singleton.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -10,8 +11,8 @@ public class BaraholkaPage {
     private WebDriver driver;
     private By baraholkaFormHeader = By.xpath("//h1[text()='Барахолка']");
 
-    public BaraholkaPage(WebDriver driver) {
-        this.driver = driver;
+    public BaraholkaPage() {
+        this.driver = Singleton.getDriver();
     }
 
     public String getFormHeaderText() {

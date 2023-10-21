@@ -12,7 +12,7 @@ public class ABTest extends BaseTest {
     @Test
     public void testABOpened() {
         HomePage homePage = new HomePage(driver);
-        ABPage abPage = new ABPage(driver);
+        ABPage abPage = new ABPage();
         homePage.clickABLink();
         Assertions.assertEquals("Автобарахолка", abPage.getAbHeader());
     }
