@@ -28,14 +28,14 @@ public class AlertTest {
 
     @Test
     public void alertTest() {
-        AlertPage alertPage = new AlertPage(driver, wait);
+        AlertPage alertPage = new AlertPage(wait);
         alertPage.openPage();
         alertPage.clickButtonTry();
         String actualResultText = alertPage.getAlertText();
 
         Assertions.assertEquals("Hello! I am an alert box!", actualResultText);
       }
-   }
+
 
     @AfterEach
     public void after() {
