@@ -11,7 +11,7 @@ public class RealtyTest extends BaseTest {
     @Test
     public void testRealtyOpened() {
         HomePage homePage = new HomePage();
-        RealtyPage realtyPage = new RealtyPage(driver);
+        RealtyPage realtyPage = new RealtyPage();
         homePage.clickRealtyLink();
         String expectedTextSale = "Продажа";
         String actualTextSale = realtyPage.getTextSaleLink();
@@ -26,7 +26,7 @@ public class RealtyTest extends BaseTest {
     public void testRealtySearched() {
         HomePage homePage = new HomePage();
         homePage.clickRealtyLink();
-        RealtyPage realtyPage = new RealtyPage(driver);
+        RealtyPage realtyPage = new RealtyPage();
         realtyPage.clickRentButton();
         realtyPage.getSearchResult();
     }

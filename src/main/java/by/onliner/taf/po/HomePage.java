@@ -1,5 +1,6 @@
 package by.onliner.taf.po;
 
+import by.onliner.taf.singleton.Singleton;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,8 +17,8 @@ public class HomePage {
     private String catalogLink = "//a[@href='https://catalog.onliner.by'][@class='b-main-navigation__link']";
     private String realtyLink = "//a[@href='https://r.onliner.by/pk'][@class='b-main-navigation__link']";
 
-    public HomePage(WebDriver driver) {
-        this.driver = driver;
+    public HomePage() {
+        this.driver = Singleton.getDriver();
     }
 
     public void openHomePage() {
@@ -46,13 +47,16 @@ public class HomePage {
         carMarketElement.click();
     }
 
-    public void clickCatalogLink(){
+    public CatalogPage clickCatalogLink(){
         WebElement catalogLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogLink)));
         catalogLinkElement.click();
+        return new CatalogPage();
     }
     public void clickRealtyLink(){
         WebElement realtyLinkElement = driver.findElement(By.xpath(realtyLink));
         realtyLinkElement.click();
     }
+
+
 }

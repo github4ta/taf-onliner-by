@@ -1,6 +1,5 @@
 package by.onliner.taf.ui;
 
-import com.google.common.net.MediaType;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
