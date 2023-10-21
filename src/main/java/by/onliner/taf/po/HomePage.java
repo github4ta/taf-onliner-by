@@ -20,6 +20,10 @@ public class HomePage {
         this.driver = driver;
     }
 
+    public void openHomePage() {
+        driver.get("https://www.onliner.by/");
+    }
+
     public void clickLoginButton() {
         WebElement loginButtonElement = driver.findElement(By.xpath(loginButton));
         loginButtonElement.click();
