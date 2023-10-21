@@ -1,7 +1,6 @@
 package by.onliner.taf.ui;
 
 import by.onliner.taf.po.BaraholkaPage;
-import by.onliner.taf.po.HomePage;
 import org.junit.jupiter.api.*;
 
 public class BaraholkaTest extends BaseTest {

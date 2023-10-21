@@ -10,18 +10,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.NetworkInterceptor;
-import org.openqa.selenium.remote.http.HttpResponse;
-import org.openqa.selenium.remote.http.Route;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.openqa.selenium.remote.http.Contents.utf8String;
 
 public class AlertTest {
     ChromeOptions profile = new ChromeOptions();
