@@ -12,7 +12,7 @@ public class CatalogTest extends BaseTest{
     @Test
     public void  testCatalogOpened(){
         HomePage homePage = new HomePage(driver);
-        CatalogPage catalogPage = new CatalogPage(driver);
+        CatalogPage catalogPage = new CatalogPage();
         homePage.clickCatalogLink();
         String actualCatalogTitleText = catalogPage.getCatalogHeader();
         String excpectedCatalogTitleText = "КаталогВсе суперцены!";
