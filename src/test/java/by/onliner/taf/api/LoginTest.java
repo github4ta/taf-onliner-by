@@ -86,7 +86,7 @@ public class LoginTest {
         int actualStatusCode = response.getStatusLine().getStatusCode();
         String bodyResponse = EntityUtils.toString(response.getEntity());
         assertEquals(HttpStatus.SC_UNPROCESSABLE_ENTITY, actualStatusCode);
-        assertTrue(bodyResponse.contains("Validation failed"));
-        assertTrue(bodyResponse.contains("Укажите ник или e-mail"));
+        assertTrue(bodyResponse.contains("\"message\":\"Validation failed\""));
+        assertTrue(bodyResponse.contains("\"login\":[\"Укажите ник или e-mail\"]"));
     }
 }
