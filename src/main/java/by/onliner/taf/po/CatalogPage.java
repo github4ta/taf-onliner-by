@@ -36,7 +36,7 @@ public class CatalogPage {
         js.executeScript("arguments[0].click();", motoTechnic);
         WebElement moto = driver.findElement(By.xpath(motoLocator));
         js.executeScript("arguments[0].click();", moto);
-        return new MotorcyclePage(driver);
+        return new MotorcyclePage();
     }
 
 
