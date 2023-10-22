@@ -11,8 +11,8 @@ public class CatalogTest extends BaseTest{
     @DisplayName("UI0020 - проверка открытия страницы Каталог")
     @Test
     public void  testCatalogOpened(){
-        HomePage homePage = new HomePage(driver);
-        CatalogPage catalogPage = new CatalogPage(driver);
+        HomePage homePage = new HomePage();
+        CatalogPage catalogPage = new CatalogPage();
         homePage.clickCatalogLink();
         String actualCatalogTitleText = catalogPage.getCatalogHeader();
         String excpectedCatalogTitleText = "КаталогВсе суперцены!";

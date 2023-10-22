@@ -14,9 +14,9 @@ public class LoginFormTest extends BaseTest {
     @DisplayName("UI0001 - Форма логина : любой Ник нейм и любой пароль")
     @Test
     public void testLoginWithAnyNickAndAnyPassword(){
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
-        LoginForm loginForm = new LoginForm(driver);
+        LoginForm loginForm = new LoginForm();
         loginForm.typeNickNameInput(Util.generateNickname());
         loginForm.typePasswordInput("123456qwerty");
         loginForm.clickLoginButton();
@@ -28,9 +28,9 @@ public class LoginFormTest extends BaseTest {
     @Test
     @DisplayName("UI0003 - LoginForm: any correct login and empty password")
     public void testLoginWithAnyEmailAndEmptyPassword(){
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
-        LoginForm loginForm = new LoginForm(driver);
+        LoginForm loginForm = new LoginForm();
         loginForm.typeNickNameInput(Util.generateNickname(10));
         loginForm.clickLoginButton();
         Assertions.assertEquals("Укажите пароль", loginForm.getErrorMessageText());
@@ -39,9 +39,9 @@ public class LoginFormTest extends BaseTest {
     @DisplayName("UI0004 - Login form: blank nickname and any password")
     @Test
     public void testLoginWithEmptyNickAndAnyPassword() {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
-        LoginForm loginForm = new LoginForm(driver);
+        LoginForm loginForm = new LoginForm();
         loginForm.typeNickNameInput("");
         loginForm.typePasswordInput("123ABCabc");
         loginForm.clickLoginButton();
@@ -55,11 +55,11 @@ public class LoginFormTest extends BaseTest {
     @Test
     public void testLoginWithEmptyNickAndEmptyPassword() {
         // Arrange
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         homePage.clickLoginButton();
 
         // Act
-        LoginForm loginForm = new LoginForm(driver);
+        LoginForm loginForm = new LoginForm();
         loginForm.typeNickNameInput("");
         loginForm.typePasswordInput("");
         loginForm.clickLoginButton();
