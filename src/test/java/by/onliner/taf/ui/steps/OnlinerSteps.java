@@ -1,5 +1,6 @@
 package by.onliner.taf.ui.steps;
 
+import by.onliner.taf.po.ABPage;
 import by.onliner.taf.po.BaraholkaPage;
 import by.onliner.taf.po.CatalogPage;
 import by.onliner.taf.po.HomePage;
@@ -44,4 +45,18 @@ public class OnlinerSteps {
         BaraholkaPage baraholkaPage = new BaraholkaPage();
         Assertions.assertEquals("Барахолка",baraholkaPage.getFormHeaderText());
     }
+
+    @When("User clicks Autobaraholaka link")
+    public void userClicksAutobaraholakaLink() {
+        homePage.clickABLink();
+    }
+
+    @Then("Autobaraholka page is opened")
+    public void autobaraholkaPageIsOpened() {
+        Assertions.assertEquals("Автобарахолка", new ABPage().getAbHeader());
+    }
+
+
+
+
 }

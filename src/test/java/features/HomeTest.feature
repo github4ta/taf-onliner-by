@@ -6,6 +6,9 @@ Feature: Test cases for onliner
 
 
   Scenario: User can open Autobaraholka page
+    Given User is on the Home page
+    When User clicks Autobaraholaka link
+    Then Autobaraholka page is opened
 
 
   Scenario: User can open Catalog page
