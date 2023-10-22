@@ -1,6 +1,8 @@
 Feature: Test cases for onliner
 
   Scenario: User can open Home page
+    When User opens Home page
+    Then Home page is opened
 
 
   Scenario: User can open Autobaraholka page
