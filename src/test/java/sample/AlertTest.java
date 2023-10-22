@@ -26,7 +26,8 @@ public class AlertTest {
 
     @Test
     public void alertTest() {
-        AlertPage alertPage = new AlertPage();
+
+        AlertPage alertPage = new AlertPage(wait);
         alertPage.openPage();
         alertPage.clickButtonTry();
         String actualResultText = alertPage.getAlertText();
