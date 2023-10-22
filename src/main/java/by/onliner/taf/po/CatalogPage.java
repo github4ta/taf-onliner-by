@@ -38,6 +38,4 @@ public class CatalogPage {
         js.executeScript("arguments[0].click();", moto);
         return new MotorcyclePage();
     }
-
-
 }
