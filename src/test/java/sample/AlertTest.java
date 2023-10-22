@@ -15,19 +15,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AlertTest {
-    WebDriver driver;
     Wait <WebDriver> wait;
-    private String tryButtonLocator = "/html/body/button";
+
 
     @BeforeEach
     public void before() {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        Singletone.getWebDriver();
+        wait = new WebDriverWait(Singletone.getWebDriver(), Duration.ofSeconds(10));
     }
 
     @Test
     public void alertTest() {
+
         AlertPage alertPage = new AlertPage(wait);
         alertPage.openPage();
         alertPage.clickButtonTry();
@@ -36,9 +35,8 @@ public class AlertTest {
         Assertions.assertEquals("Hello! I am an alert box!", actualResultText);
       }
 
-
     @AfterEach
     public void after() {
-        driver.quit();
+    Singletone.closeDriver();
     }
 }
