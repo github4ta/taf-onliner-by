@@ -1,5 +1,7 @@
 package by.onliner.taf.ui.steps;
 
+import by.onliner.taf.po.BaraholkaPage;
+import by.onliner.taf.po.CatalogPage;
 import by.onliner.taf.po.HomePage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -20,5 +22,26 @@ public class OnlinerSteps {
         String actualCopywriterText = homePage.getCopyright();
         String extendsCopywriterText = "© 2001—2023 Onlíner";
         Assertions.assertEquals(extendsCopywriterText, actualCopywriterText);
+    }
+
+    @When("User clicks Catalog link")
+    public void userClicksCatalogLink() {
+        homePage.clickCatalogLink();
+     }
+    @Then("Catalog page is opened")
+    public void catalogPageIsOpened() {
+        CatalogPage catalogPage = new CatalogPage();
+        Assertions.assertEquals("КаталогВсе суперцены!", catalogPage.getCatalogHeader());
+    }
+
+    @When("User clicks Baraholka link")
+    public void userClicksBaraholkaLink() {
+        homePage.clickBaraholkaLink();
+       }
+
+    @Then("User is on Baraholka page")
+    public void userIsOnBaraholkaPage() {
+        BaraholkaPage baraholkaPage = new BaraholkaPage();
+        Assertions.assertEquals("Барахолка",baraholkaPage.getFormHeaderText());
     }
 }

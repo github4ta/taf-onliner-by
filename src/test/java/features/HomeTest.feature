@@ -9,6 +9,9 @@ Feature: Test cases for onliner
 
 
   Scenario: User can open Catalog page
+    Given User is on the Home page
+    When User clicks Catalog link
+    Then Catalog page is opened
 
 
 
