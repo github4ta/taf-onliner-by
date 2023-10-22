@@ -1,5 +1,6 @@
 package by.onliner.taf.po;
 
+import by.onliner.taf.singleton.Singleton;
 import org.openqa.selenium.*;
 
 import java.util.concurrent.TimeUnit;
@@ -18,8 +19,8 @@ public class RealtyPage {
     private By realRoomApartment = By.xpath("//span[@class='apartment-bar__value']");
     private By realCityApartment = By.xpath(" //div[@class='apartment-info__sub-line apartment-info__sub-line_large']");
 
-    public RealtyPage(WebDriver driver) {
-        this.driver = driver;
+    public RealtyPage() {
+        this.driver = Singleton.getDriver();
     }
 
     public String getTextSaleLink() {
