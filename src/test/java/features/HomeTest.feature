@@ -17,14 +17,14 @@ Feature: Test cases for onliner
     Then Catalog page is opened
 
 
-
-
   Scenario: User can open Realty page
+    Given User is on the Home page
+    When User clicks Realty link
+    Then Realty page is opened
 
 
   Scenario: User can open Baraholka page
     Given User is on the Home page
     When User clicks Baraholka link
     Then User is on Baraholka page
-
 
