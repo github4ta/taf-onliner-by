@@ -24,6 +24,6 @@ public class NotFoundTest {
         get = new HttpGet(url);
         response = client.execute(get);
         Assertions.assertEquals(404, response.getStatusLine().getStatusCode());
-        EntityUtils.consume(response.getEntity());
+        // EntityUtils.consume(response.getEntity());
     }
 }
