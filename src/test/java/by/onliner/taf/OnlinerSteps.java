@@ -1,4 +1,4 @@
-package by.onliner.taf.ui.steps;
+package by.onliner.taf;
 
 import by.onliner.taf.po.*;
 import io.cucumber.java.en.Given;
