@@ -31,23 +31,27 @@ public class HomePage {
     }
 
     public void  clickBaraholkaLink() {
+        // TODO refactor with JSexecutor
         WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
         baraholkaLinkElement.click();
     }
 
     public String getCopyright() {
+        // TODO refactor with JSexecutor
         WebElement copyrightTextElement = driver.findElement(By.xpath(copyright));
         return copyrightTextElement.getText();
     }
 
     public void clickABLink() {
+        // TODO refactor with JSexecutor
         WebElement carMarketElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(abLink)));
         carMarketElement.click();
     }
 
     public CatalogPage clickCatalogLink(){
+        // TODO refactor with JSexecutor
         WebElement catalogLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogLink)));
         catalogLinkElement.click();

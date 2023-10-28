@@ -16,6 +16,7 @@ public class BaraholkaPage {
     }
 
     public String getFormHeaderText() {
+        // TODO refactor with JSexecutor
         return new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(baraholkaFormHeader))
                 .getText();
