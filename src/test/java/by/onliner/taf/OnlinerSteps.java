@@ -1,4 +1,4 @@
-package by.onliner.taf.ui.steps;
+package by.onliner.taf;
 
 import by.onliner.taf.po.*;
 import io.cucumber.java.en.Given;
@@ -30,6 +30,7 @@ public class OnlinerSteps {
 
     @Then("Catalog page is opened")
     public void catalogPageIsOpened() {
+        // TODO refactor with JSexecutor
         CatalogPage catalogPage = new CatalogPage();
         Assertions.assertEquals("КаталогВсе суперцены!", catalogPage.getCatalogHeader());
     }
@@ -57,6 +58,7 @@ public class OnlinerSteps {
 
     @When("User clicks Realty link")
     public void userClicksRealtyLink() {
+        // TODO refactor with JSexecutor
         homePage.clickRealtyLink();
     }
 

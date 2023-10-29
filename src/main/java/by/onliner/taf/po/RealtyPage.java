@@ -24,11 +24,13 @@ public class RealtyPage {
     }
 
     public String getTextSaleLink() {
+        // TODO refactor with JSexecutor
         WebElement textSaleLinkElement = driver.findElement(By.xpath(saleLink));
         return textSaleLinkElement.getText();
     }
 
     public String getTextRentLink() {
+        // TODO refactor with JSexecutor
         WebElement textRentLink = driver.findElement(By.xpath(rentLink));
         return textRentLink.getText();
     }

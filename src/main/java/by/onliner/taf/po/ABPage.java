@@ -16,6 +16,7 @@ public class ABPage {
     }
 
     public String getAbHeader() {
+        // TODO refactor with JSexecutor
         return new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(abHeader)))
                 .getText();
