@@ -1,15 +1,10 @@
 package by.onliner.taf.po;
 
 import by.onliner.taf.singleton.Singleton;
-import by.onliner.taf.utils.Util;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
@@ -36,10 +31,7 @@ public class HomePage {
     }
 
     public void clickBaraholkaLink() {
-        // TODO refactor with JSexecutor
-        WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
-        baraholkaLinkElement.click();
+        js.executeScript("document.getElementsByClassName(\"b-main-navigation__text\")[5].click();");
     }
 
     public String getCopyright() {
