@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 
 public class OnlinerSteps {
     public static HomePage homePage;
@@ -57,13 +58,13 @@ public class OnlinerSteps {
 
     @When("User clicks Realty link")
     public void userClicksRealtyLink() {
-        // TODO refactor with JSexecutor
         homePage.clickRealtyLink();
+
     }
 
     @Then("Realty page is opened")
     public void realtyPageIsOpened() {
         Assertions.assertEquals("Продажа", new RealtyPage().getTextSaleLink());
-        Assertions.assertEquals("Аренда", new RealtyPage().getTextRentLink());
+        Assertions.assertEquals("Арендa", new RealtyPage().getTextRentLink());
     }
 }

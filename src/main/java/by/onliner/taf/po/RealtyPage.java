@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RealtyPage {
     private WebDriver driver;
+    private JavascriptExecutor js;
     private String saleLink = "//span[@class='project-navigation__sign'][text()='Продажа']";
     private String rentLink = "//span[@class='project-navigation__sign'][text()='Аренда']";
     private By apartmentButton = By.xpath("//span[@class='filter__item-inner'][text()='Квартира']");
@@ -21,18 +22,15 @@ public class RealtyPage {
 
     public RealtyPage() {
         this.driver = Singleton.getDriver();
+        js = (JavascriptExecutor) driver;
     }
 
     public String getTextSaleLink() {
-        // TODO refactor with JSexecutor
-        WebElement textSaleLinkElement = driver.findElement(By.xpath(saleLink));
-        return textSaleLinkElement.getText();
+        return (String) js.executeScript("return document.getElementsByClassName('project-navigation__sign')[0].innerText;");
     }
 
     public String getTextRentLink() {
-        // TODO refactor with JSexecutor
-        WebElement textRentLink = driver.findElement(By.xpath(rentLink));
-        return textRentLink.getText();
+        return (String) js.executeScript("return document.getElementsByClassName('project-navigation__sign')[1].innerText;");
     }
 
     public void clickRentButton() {

@@ -55,7 +55,6 @@ public class HomePage {
     }
 
     public void clickRealtyLink() {
-        WebElement realtyLinkElement = driver.findElement(By.xpath(realtyLink));
-        realtyLinkElement.click();
+        js.executeScript("document.getElementsByClassName('b-main-navigation__link')[3].click();");
     }
 }
