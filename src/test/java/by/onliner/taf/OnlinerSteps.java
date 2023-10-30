@@ -30,7 +30,6 @@ public class OnlinerSteps {
 
     @Then("Catalog page is opened")
     public void catalogPageIsOpened() {
-        // TODO refactor with JSexecutor
         CatalogPage catalogPage = new CatalogPage();
         Assertions.assertEquals("КаталогВсе суперцены!", catalogPage.getCatalogHeader());
     }
