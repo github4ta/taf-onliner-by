@@ -43,9 +43,7 @@ public class HomePage {
     }
 
     public String getCopyright() {
-        // TODO refactor with JSexecutor
-        WebElement copyrightTextElement = driver.findElement(By.xpath(copyright));
-        return copyrightTextElement.getText();
+       return (String) js.executeScript("return document.getElementsByClassName('footer-style__copy')[0].innerText;");
     }
 
     public void clickABLink() {
