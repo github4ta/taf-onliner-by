@@ -63,7 +63,7 @@ public class OnlinerSteps {
     }
 
     @Then("Realty page is opened")
-    public void realtyPageIsOpened(){
+    public void realtyPageIsOpened() {
         Assertions.assertEquals("Продажа", new RealtyPage().getTextSaleLink());
         Assertions.assertEquals("Аренда", new RealtyPage().getTextRentLink());
     }

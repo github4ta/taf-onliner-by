@@ -1,15 +1,19 @@
 package by.onliner.taf.po;
 
 import by.onliner.taf.singleton.Singleton;
+import by.onliner.taf.utils.Util;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 
 public class HomePage {
     private WebDriver driver;
+    private JavascriptExecutor js;
     private String loginButton = "//div[@class='auth-bar__item auth-bar__item--text']";
     private String copyright = "//div[@class='footer-style__copy']";
     private String baraholkaLink = "//a[@href='https://baraholka.onliner.by/']";
@@ -19,6 +23,7 @@ public class HomePage {
 
     public HomePage() {
         this.driver = Singleton.getDriver();
+        js = (JavascriptExecutor) driver;
     }
 
     public void openHomePage() {
@@ -30,7 +35,7 @@ public class HomePage {
         loginButtonElement.click();
     }
 
-    public void  clickBaraholkaLink() {
+    public void clickBaraholkaLink() {
         // TODO refactor with JSexecutor
         WebElement baraholkaLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(baraholkaLink)));
@@ -44,20 +49,20 @@ public class HomePage {
     }
 
     public void clickABLink() {
-        // TODO refactor with JSexecutor
-        WebElement carMarketElement = new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(abLink)));
-        carMarketElement.click();
+        js.executeScript("document.querySelector(\"#container > div > div > header > div.b-top-menu > div > nav > ul.b-main-navigation > li:nth-child(3) > a\").click();");
+
+
     }
 
-    public CatalogPage clickCatalogLink(){
+    public CatalogPage clickCatalogLink() {
         // TODO refactor with JSexecutor
         WebElement catalogLinkElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogLink)));
         catalogLinkElement.click();
         return new CatalogPage();
     }
-    public void clickRealtyLink(){
+
+    public void clickRealtyLink() {
         WebElement realtyLinkElement = driver.findElement(By.xpath(realtyLink));
         realtyLinkElement.click();
     }
