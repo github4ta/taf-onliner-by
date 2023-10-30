@@ -24,9 +24,7 @@ public class CatalogPage {
     }
 
     public String getCatalogHeader() {
-        return new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.presenceOfElementLocated(By.xpath(catalogHeader)))
-                .getText();
+        return (String) js.executeScript("return document.querySelector(\"#container > div > div > div > div > div.catalog-navigation.catalog-navigation_opened > div.catalog-navigation__title\").innerText");
     }
 
     public MotorcyclePage motoCheckInCatalog() {
